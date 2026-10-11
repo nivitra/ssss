@@ -1,0 +1,1132 @@
+{
+  "screenStatesReviewed": 73,
+  "scope": "Source inventory, not a claim that all states are captured",
+  "screens": [
+    {
+      "id": "explore.map",
+      "group": "Explore",
+      "title": "City map with place shelf",
+      "entry_steps": [
+        "Explore tab",
+        "Select Jubilee Hills / Kokapet / All Hyderabad",
+        "Map view; wait for real tiles and populated pins"
+      ],
+      "states": [
+        "expanded shelf",
+        "collapsed shelf",
+        "selected marker"
+      ],
+      "capture_notes": "Explore remains Mapbox. Do not use this image as evidence of a Google Explore migration."
+    },
+    {
+      "id": "explore.board",
+      "group": "Explore",
+      "title": "Place board and filtered catalogue",
+      "entry_steps": [
+        "Explore → board toggle",
+        "Enter real venue/category query or select a category"
+      ],
+      "states": [
+        "populated",
+        "no matching catalogue results"
+      ],
+      "capture_notes": "Preserve search, category and area on Back. Category controls use actual CityCategory raw values."
+    },
+    {
+      "id": "explore.area",
+      "group": "Explore",
+      "title": "Area menu and search keyboard",
+      "entry_steps": [
+        "Tap area menu or focus search"
+      ],
+      "states": [
+        "All Hyderabad",
+        "Jubilee Hills",
+        "Kokapet",
+        "keyboard visible"
+      ],
+      "capture_notes": "Menu label is All Hyderabad; generated provider queries normalize it to Hyderabad."
+    },
+    {
+      "id": "explore.detail",
+      "group": "Explore",
+      "title": "Place detail with sourced media and actions",
+      "entry_steps": [
+        "Open a source-backed catalogue place from board, map shelf, Ask or Saved"
+      ],
+      "states": [
+        "photo available",
+        "no approved photo",
+        "saved",
+        "unsaved",
+        "directory service"
+      ],
+      "capture_notes": "Current editorial entry is pushed; older tests that expect place.close may need navigation-selector updates. No invented photos."
+    },
+    {
+      "id": "explore.google-preview",
+      "group": "Explore",
+      "title": "Google place location preview",
+      "entry_steps": [
+        "Explore → Kokapet → board",
+        "Search Club Rogue Kokapet",
+        "Open place.open.eazydiner-705823",
+        "Wait place.googleMap value ready"
+      ],
+      "states": [
+        "loading",
+        "ready",
+        "unlocated",
+        "unavailable"
+      ],
+      "capture_notes": "Preview has approximate independent coordinates, no GPS request or automatic guidance. The Google attribution must remain visible."
+    },
+    {
+      "id": "explore.sources",
+      "group": "Explore",
+      "title": "Place facts, source links and photo credits",
+      "entry_steps": [
+        "Open detail",
+        "Scroll to facts / Sources & credits"
+      ],
+      "states": [
+        "known facts",
+        "unknown facts",
+        "historical media"
+      ],
+      "capture_notes": "Source URLs/credit text are real UI. They do not establish current hours or entrance verification."
+    },
+    {
+      "id": "explore.arrival",
+      "group": "Explore",
+      "title": "Published arrival guide",
+      "entry_steps": [
+        "Open a place with a valid published arrival manifest",
+        "Open arrival guide / approach map"
+      ],
+      "states": [
+        "available",
+        "expired",
+        "unknown"
+      ],
+      "capture_notes": "Conditional source-backed screen. No dedicated UITest selector/flow found. Do not create a fake verified entrance merely to capture it."
+    },
+    {
+      "id": "ask.start",
+      "group": "Ask",
+      "title": "Intent-led first screen and category grid",
+      "entry_steps": [
+        "Ask tab",
+        "Start a new conversation if needed",
+        "Keep first screen before submitting"
+      ],
+      "states": [
+        "discover",
+        "outing",
+        "service",
+        "signed out",
+        "taste loading"
+      ],
+      "capture_notes": "Actual local source-backed picks depend on area/taste; no authentication needed to browse."
+    },
+    {
+      "id": "ask.categories",
+      "group": "Ask",
+      "title": "Searchable category browser",
+      "entry_steps": [
+        "Ask → All categories",
+        "Search Chemists or another registry category"
+      ],
+      "states": [
+        "full list",
+        "filtered list"
+      ],
+      "capture_notes": "Use current source registry, not a hardcoded marketing category count."
+    },
+    {
+      "id": "ask.directory",
+      "group": "Ask",
+      "title": "Guided directory results and automatic filter",
+      "entry_steps": [
+        "Choose category",
+        "Choose All Hyderabad / Jubilee Hills / Kokapet",
+        "Filter a real place name; dismiss keyboard"
+      ],
+      "states": [
+        "populated",
+        "automatic filtered results",
+        "more results"
+      ],
+      "capture_notes": "Local directory browsing does not itself send an AI request."
+    },
+    {
+      "id": "ask.directory-empty",
+      "group": "Ask",
+      "title": "Honest empty service category with Google handoff",
+      "entry_steps": [
+        "Choose Loans (or another genuinely empty current category)",
+        "Show places and verify actual count 0"
+      ],
+      "states": [
+        "empty",
+        "Google search available"
+      ],
+      "capture_notes": "No invented providers, booking or loan offers. Google search is a separate provider surface."
+    },
+    {
+      "id": "ask.request-details",
+      "group": "Ask",
+      "title": "Request details and exact place selection",
+      "entry_steps": [
+        "Open request details from Ask",
+        "Or enter from explicit Saved selection"
+      ],
+      "states": [
+        "saved only",
+        "exact selection",
+        "category constrained"
+      ],
+      "capture_notes": "Do not broaden selected IDs while preparing screenshots; no Send is needed for this screen."
+    },
+    {
+      "id": "ask.template",
+      "group": "Ask",
+      "title": "Editable outing templates",
+      "entry_steps": [
+        "Ask → outing intent",
+        "Choose an available local template"
+      ],
+      "states": [
+        "template choices",
+        "prepared brief"
+      ],
+      "capture_notes": "Template action prepares a draft and must not claim an AI result."
+    },
+    {
+      "id": "ask.planner",
+      "group": "Ask",
+      "title": "Activities and preferences editor",
+      "entry_steps": [
+        "Ask → outing → edit brief",
+        "Choose 2–4 activities, areas, company, budget and total duration"
+      ],
+      "states": [
+        "new brief",
+        "pinned place",
+        "replace one stage"
+      ],
+      "capture_notes": "Budget and company are preferences, not booking or pricing guarantees."
+    },
+    {
+      "id": "ask.start-time",
+      "group": "Ask",
+      "title": "Explicit optional start time in IST",
+      "entry_steps": [
+        "Open planner",
+        "Enable explicit start time",
+        "Select date/time then Apply"
+      ],
+      "states": [
+        "flexible",
+        "chosen time",
+        "past-time notice"
+      ],
+      "capture_notes": "IST preference only; no verification of venue hours or future traffic."
+    },
+    {
+      "id": "ask.visit-durations",
+      "group": "Ask",
+      "title": "Desired stay durations per activity",
+      "entry_steps": [
+        "Open planner",
+        "Choose desired stay for each stage",
+        "Apply or Cancel"
+      ],
+      "states": [
+        "all chosen",
+        "one unknown",
+        "cancelled"
+      ],
+      "capture_notes": "Visit minutes are chosen by the user, not inferred venue facts."
+    },
+    {
+      "id": "ask.compose",
+      "group": "Ask",
+      "title": "Editable type-or-voice composer",
+      "entry_steps": [
+        "Ask → focus composer",
+        "Enter a user-authored request without sending"
+      ],
+      "states": [
+        "empty",
+        "draft",
+        "keyboard visible"
+      ],
+      "capture_notes": "Keep personal messages out of publicly distributed screenshots."
+    },
+    {
+      "id": "ask.voice",
+      "group": "Ask",
+      "title": "Voice recording, processing and retry",
+      "entry_steps": [
+        "Signed in Ask → microphone",
+        "Grant actual microphone permission if chosen"
+      ],
+      "states": [
+        "recording",
+        "processing",
+        "permission denied",
+        "error"
+      ],
+      "capture_notes": "No dedicated voice UITest found. Do not fabricate transcript or claim a simulator recording proves physical-iPhone audio."
+    },
+    {
+      "id": "ask.generating",
+      "group": "Ask",
+      "title": "Live generation progress and streaming text",
+      "entry_steps": [
+        "Enter valid request",
+        "Explicitly Send with intended QA account"
+      ],
+      "states": [
+        "loading",
+        "partial streaming",
+        "cancelled"
+      ],
+      "capture_notes": "Transient capture timing not guaranteed by current snapshot calls. Cancel changes visible state; no fake progress fixture."
+    },
+    {
+      "id": "ask.answer",
+      "group": "Ask",
+      "title": "Source-bound AI answer and generative layout",
+      "entry_steps": [
+        "Send actual supported city request",
+        "Wait for completed current reply"
+      ],
+      "states": [
+        "cards",
+        "comparison",
+        "spotlight",
+        "follow-up"
+      ],
+      "capture_notes": "Exact layout and venues depend on actual reply. Only capture completed content as a final answer."
+    },
+    {
+      "id": "ask.shortlist",
+      "group": "Ask",
+      "title": "Compare current shortlist and create a draft",
+      "entry_steps": [
+        "Add source-backed results to shortlist",
+        "Open shortlist review"
+      ],
+      "states": [
+        "leisure shortlist",
+        "service comparison",
+        "mixed ineligible for outing"
+      ],
+      "capture_notes": "This is the current in-session shortlist; do not portray account-backed named shortlist browsing unless present in UI."
+    },
+    {
+      "id": "ask.plan-result",
+      "group": "Ask",
+      "title": "Staged AI outing with checks and save",
+      "entry_steps": [
+        "Configure outing brief",
+        "Send real request",
+        "Wait for full staged plan"
+      ],
+      "states": [
+        "sourced plan",
+        "missing position notice",
+        "time preference",
+        "checks"
+      ],
+      "capture_notes": "Do not label this a booked itinerary. Save reveals the exact stable plan in Plans."
+    },
+    {
+      "id": "ask.refinement",
+      "group": "Ask",
+      "title": "Keep/replace one stop while refining a saved plan",
+      "entry_steps": [
+        "Plans → eligible 2–4-stop plan → Refine with Ask",
+        "Choose a stage to replace; retain other pins"
+      ],
+      "states": [
+        "prepared refinement",
+        "returned replacement",
+        "updated original plan"
+      ],
+      "capture_notes": "Preserve plan ID, selected pins and preference metadata; test writes should remain QA-local."
+    },
+    {
+      "id": "ask.shared-context",
+      "group": "Ask",
+      "title": "Confirmed saved-link idea with explicit note consent",
+      "entry_steps": [
+        "Saved → Reels & links → confirmed place",
+        "Choose Explore this idea / plan around it",
+        "Leave note excluded unless explicitly opted in"
+      ],
+      "states": [
+        "exact single place",
+        "pinned first stage",
+        "note opted in",
+        "note removed"
+      ],
+      "capture_notes": "Original URL/caption is local metadata; no automatic scraping or AI submission."
+    },
+    {
+      "id": "ask.history",
+      "group": "Ask",
+      "title": "Earlier conversation and retained answer after failure",
+      "entry_steps": [
+        "Run a real conversation",
+        "Expand earlier messages, or inspect authentic interrupted/failed follow-up state"
+      ],
+      "states": [
+        "history",
+        "retained earlier answer",
+        "current request error",
+        "retry"
+      ],
+      "capture_notes": "Current source contains recovery UI, but no dedicated current UI test was found for every branch. Do not present retained answer as the failed request’s reply."
+    },
+    {
+      "id": "saved.places",
+      "group": "Saved",
+      "title": "Saved places collection",
+      "entry_steps": [
+        "Save real catalogue places",
+        "Open Saved → Places"
+      ],
+      "states": [
+        "populated",
+        "empty",
+        "unresolved saved references"
+      ],
+      "capture_notes": "Local saves can sync only when explicitly enabled. Empty capture must use an already empty QA profile, not erase someone’s collection."
+    },
+    {
+      "id": "saved.selection",
+      "group": "Saved",
+      "title": "Explicit ordered up-to-eight-place selection",
+      "entry_steps": [
+        "Saved → Plan with Ask or create draft",
+        "Tap eligible leisure places in desired order"
+      ],
+      "states": [
+        "zero selected",
+        "ordered two places",
+        "limit eight",
+        "service unavailable"
+      ],
+      "capture_notes": "Selection excludes care/services for outings; Ask handoff does not auto-send."
+    },
+    {
+      "id": "saved.links",
+      "group": "Saved",
+      "title": "Reels & links inbox",
+      "entry_steps": [
+        "Saved → Reels & links"
+      ],
+      "states": [
+        "empty",
+        "stored links",
+        "import error"
+      ],
+      "capture_notes": "Plain saved source links and user notes, not scraped videos or generated captions."
+    },
+    {
+      "id": "saved.add-link",
+      "group": "Saved",
+      "title": "Add a public link and personal note",
+      "entry_steps": [
+        "Reels & links → Add",
+        "Paste valid public URL and optional user-authored note"
+      ],
+      "states": [
+        "editing",
+        "invalid URL",
+        "saved"
+      ],
+      "capture_notes": "Use benign public URL; do not expose token-bearing links or private notes."
+    },
+    {
+      "id": "saved.confirm-place",
+      "group": "Saved",
+      "title": "Review source and explicitly attach catalogue place",
+      "entry_steps": [
+        "Open saved link",
+        "Find matching source-backed catalogue record",
+        "Confirm exact branch"
+      ],
+      "states": [
+        "unconfirmed",
+        "confirmed",
+        "unavailable place"
+      ],
+      "capture_notes": "An unconfirmed Reel is not a place. Preserve explicit identity confirmation."
+    },
+    {
+      "id": "saved.link-to-plan",
+      "group": "Saved",
+      "title": "Confirmed idea: ask, add next activity or link plan",
+      "entry_steps": [
+        "Open confirmed saved link",
+        "Select next leisure activity / Ask / create local draft"
+      ],
+      "states": [
+        "note excluded",
+        "note included",
+        "plan associated"
+      ],
+      "capture_notes": "No automatic messaging and no silent note transmission."
+    },
+    {
+      "id": "plans.list",
+      "group": "Plans",
+      "title": "Draft plans list and exact saved-plan reveal",
+      "entry_steps": [
+        "Plans tab",
+        "Or save/refine a plan from Ask to reveal its stable UUID"
+      ],
+      "states": [
+        "empty",
+        "collapsed cards",
+        "exact saved plan expanded",
+        "missing-plan notice"
+      ],
+      "capture_notes": "Ordinary tab return must not replay the reveal. No trip starts when revealing a plan."
+    },
+    {
+      "id": "plans.detail",
+      "group": "Plans",
+      "title": "Expanded plan, brief and ordered stops",
+      "entry_steps": [
+        "Expand a real local QA draft"
+      ],
+      "states": [
+        "brief present",
+        "legacy no brief",
+        "unresolved stop"
+      ],
+      "capture_notes": "Requested activities/time are preferences; creation date is not a booking date."
+    },
+    {
+      "id": "plans.editor",
+      "group": "Plans",
+      "title": "Rename, reorder and remove draft stops",
+      "entry_steps": [
+        "Expanded plan → edit",
+        "Edit only a QA-local draft"
+      ],
+      "states": [
+        "title editing",
+        "stop reorder",
+        "validation conflict"
+      ],
+      "capture_notes": "Do not modify existing personal plans for screenshot decoration."
+    },
+    {
+      "id": "plans.travel",
+      "group": "Plans",
+      "title": "Travel-between-stops estimates",
+      "entry_steps": [
+        "Expanded plan → Check travel between stops",
+        "Choose drive or walk",
+        "Explicit Check"
+      ],
+      "states": [
+        "unchecked",
+        "checking",
+        "complete",
+        "partial",
+        "unlocated"
+      ],
+      "capture_notes": "Travel estimates remain Mapbox between selected stops. No user-location permission needed for this check."
+    },
+    {
+      "id": "plans.time-budget",
+      "group": "Plans",
+      "title": "Visits plus travel budget and projected timeline",
+      "entry_steps": [
+        "Ask draft → time budget or saved plan → travel",
+        "Set every desired stay",
+        "Check all route legs"
+      ],
+      "states": [
+        "complete fits",
+        "complete overrun",
+        "unknown duration",
+        "partial routes"
+      ],
+      "capture_notes": "No fit/finish claim unless all required durations and legs known; timeline is projected, not verified venue access."
+    },
+    {
+      "id": "plans.visit-editor",
+      "group": "Plans",
+      "title": "Edit visit times without replacing route",
+      "entry_steps": [
+        "Journey → Edit visit times",
+        "Change user duration → Apply"
+      ],
+      "states": [
+        "editing",
+        "applied",
+        "conflict"
+      ],
+      "capture_notes": "Known current route can be reused for duration-only edits; stale identity cannot."
+    },
+    {
+      "id": "plans.progress",
+      "group": "Plans",
+      "title": "Manual next-stop progress",
+      "entry_steps": [
+        "Expanded plan → Follow outing",
+        "Explicitly Begin",
+        "Mark visited / skip only by user action"
+      ],
+      "states": [
+        "ready",
+        "active next stop",
+        "paused",
+        "completed"
+      ],
+      "capture_notes": "Directions never mark arrival. Use local QA records for manual progress."
+    },
+    {
+      "id": "plans.stay-timer",
+      "group": "Plans",
+      "title": "Explicit stay timer and return continuity",
+      "entry_steps": [
+        "Begin QA outing",
+        "Choose timer on next stop",
+        "Return via Back then reopen"
+      ],
+      "states": [
+        "timer offered",
+        "counting down",
+        "expired",
+        "ended"
+      ],
+      "capture_notes": "Timer does not automatically mark a stop visited."
+    },
+    {
+      "id": "plans.completed",
+      "group": "Plans",
+      "title": "Completed checklist, undo and restart",
+      "entry_steps": [
+        "Explicitly mark/skip every stop in QA outing"
+      ],
+      "states": [
+        "complete",
+        "undo last action",
+        "restart confirmation"
+      ],
+      "capture_notes": "Progress is manual, not GPS attendance verification."
+    },
+    {
+      "id": "account.connection",
+      "group": "Account/taste",
+      "title": "Connection and collection sync controls",
+      "entry_steps": [
+        "Explore → account/connection"
+      ],
+      "states": [
+        "signed out",
+        "sync off",
+        "synced",
+        "pending/conflict",
+        "account switch"
+      ],
+      "capture_notes": "Capture controls without enabling sync or replacing copies solely for a screenshot. Existing sync test requires explicit KULTURE_ENABLE_EXISTING_SYNC gate."
+    },
+    {
+      "id": "account.sign-in",
+      "group": "Account/taste",
+      "title": "Sign-in form and keyboard",
+      "entry_steps": [
+        "Connection → Sign in"
+      ],
+      "states": [
+        "empty form",
+        "editing",
+        "connecting",
+        "failure"
+      ],
+      "capture_notes": "Capture an empty form; never expose private email/password. Password stays secure but email is visible."
+    },
+    {
+      "id": "account.register",
+      "group": "Account/taste",
+      "title": "Create-account and recovery affordances",
+      "entry_steps": [
+        "Sign-in → Create a new account toggle",
+        "Or inspect Forgot password / email availability"
+      ],
+      "states": [
+        "registration form",
+        "email recovery unavailable",
+        "account message"
+      ],
+      "capture_notes": "Do not actually create accounts or trigger recovery email solely to capture the screen."
+    },
+    {
+      "id": "account.signed-in",
+      "group": "Account/taste",
+      "title": "Signed-in account and privacy details",
+      "entry_steps": [
+        "Connection → Manage account"
+      ],
+      "states": [
+        "signed in",
+        "email unverified",
+        "privacy disclosure"
+      ],
+      "capture_notes": "Email is visible; use approved public demo identity or keep this capture private."
+    },
+    {
+      "id": "taste.preferences",
+      "group": "Account/taste",
+      "title": "Interests, pace, nightlife and Live Activity preferences",
+      "entry_steps": [
+        "Ask → taste button"
+      ],
+      "states": [
+        "selected interests",
+        "avoid bars",
+        "Live Activities on/off"
+      ],
+      "capture_notes": "Preference buttons currently use visible labels rather than individual stable IDs. No measured travel-time claim from pace."
+    },
+    {
+      "id": "taste.place-choice",
+      "group": "Account/taste",
+      "title": "Explicit like / hide / undo on place",
+      "entry_steps": [
+        "Open real place detail",
+        "Scroll controls above sticky Directions dock",
+        "Choose only preflight-approved QA feedback fixture"
+      ],
+      "states": [
+        "none",
+        "liked",
+        "hidden",
+        "busy",
+        "failed"
+      ],
+      "capture_notes": "These mutate persistent account feedback, not Saved. Never reuse a personal fixture without checking its prior choice."
+    },
+    {
+      "id": "taste.history",
+      "group": "Account/taste",
+      "title": "Liked / hidden place history",
+      "entry_steps": [
+        "Taste → Your choices"
+      ],
+      "states": [
+        "liked list",
+        "hidden list",
+        "empty",
+        "stale",
+        "signed out"
+      ],
+      "capture_notes": "Account-scoped. Sign-out must clear private rows."
+    },
+    {
+      "id": "contact.official",
+      "group": "Account/taste",
+      "title": "Sourced contact facts and visit checklist",
+      "entry_steps": [
+        "Ask cafes → All Hyderabad → Concu → Contact",
+        "Wait screen value ready"
+      ],
+      "states": [
+        "venue contact",
+        "source timestamps",
+        "category checks"
+      ],
+      "capture_notes": "Published facts are not a live call/opening check. Do not tap Call/Website just to capture."
+    },
+    {
+      "id": "contact.central-unknown",
+      "group": "Account/taste",
+      "title": "Central contact and honest missing contact facts",
+      "entry_steps": [
+        "Ask hospitals → Medicover Financial District for central contact",
+        "UniCare Global Hospitals Kokapet for unknown cohort fields"
+      ],
+      "states": [
+        "central number",
+        "unknown hours",
+        "no published phone"
+      ],
+      "capture_notes": "Fixture content can change; check current API facts. No emergency/clinical claims."
+    },
+    {
+      "id": "contact.enquiry",
+      "group": "Account/taste",
+      "title": "Editable enquiry copied for the user to send",
+      "entry_steps": [
+        "Contact → select factual questions",
+        "Edit message → Copy"
+      ],
+      "states": [
+        "generated editable draft",
+        "user editing",
+        "copied"
+      ],
+      "capture_notes": "Copy only; no message is sent and no booking is made."
+    },
+    {
+      "id": "google.search",
+      "group": "Google/navigation",
+      "title": "Explicit Google search and provider result cards",
+      "entry_steps": [
+        "Ask Chemists → All Hyderabad → Google",
+        "Initial query Chemists in Hyderabad auto-submits once",
+        "Later edits require Search"
+      ],
+      "states": [
+        "idle",
+        "loading",
+        "loaded N",
+        "empty",
+        "failed"
+      ],
+      "capture_notes": "Require loaded N with N>0 AND real SDK row. Placeholder rows during loading are not result evidence. Tap place name, not reviews/external-arrow controls."
+    },
+    {
+      "id": "google.details",
+      "group": "Google/navigation",
+      "title": "Actual Google Place details",
+      "entry_steps": [
+        "Tap name of actual Google result",
+        "Wait details value loaded"
+      ],
+      "states": [
+        "loaded",
+        "failed",
+        "retry"
+      ],
+      "capture_notes": "Google content stays provider-owned/ephemeral. Keep required Google attribution and contributor credits."
+    },
+    {
+      "id": "google.branch-search",
+      "group": "Google/navigation",
+      "title": "Directions-intent branch selection",
+      "entry_steps": [
+        "Directions from a real listing with no sourced coordinate",
+        "Explicit initial branch query",
+        "Select exact provider branch → native route preview"
+      ],
+      "states": [
+        "results",
+        "no matching branch",
+        "failure"
+      ],
+      "capture_notes": "Directions intent skips detail after branch selection; ordinary Google browsing retains detail. Do not fabricate coordinate matches."
+    },
+    {
+      "id": "google.route",
+      "group": "Google/navigation",
+      "title": "Native in-app route preview",
+      "entry_steps": [
+        "Place Directions or Google detail Navigate",
+        "Accept setup if needed",
+        "Explicit Directions entry auto-checks route once"
+      ],
+      "states": [
+        "consent",
+        "locating",
+        "routing",
+        "routeReady",
+        "failed"
+      ],
+      "capture_notes": "Only current real SDK route-ready state is evidence. Start guidance remains explicit."
+    },
+    {
+      "id": "google.guidance",
+      "group": "Google/navigation",
+      "title": "Active Google turn-by-turn guidance",
+      "entry_steps": [
+        "Route ready → explicit Start navigation"
+      ],
+      "states": [
+        "guiding",
+        "background then return",
+        "stopped"
+      ],
+      "capture_notes": "Existing automated flow uses SDK simulation, not physical travel. Real-world guidance requires device field testing."
+    },
+    {
+      "id": "google.simulation",
+      "group": "Google/navigation",
+      "title": "Clearly labelled SDK simulated guidance",
+      "entry_steps": [
+        "QA simulator route ready → Simulate route"
+      ],
+      "states": [
+        "simulated guiding",
+        "after Home and return"
+      ],
+      "capture_notes": "Keep SIMULATED ROUTE label in image. Never remove it or describe it as a real trip."
+    },
+    {
+      "id": "google.licenses",
+      "group": "Google/navigation",
+      "title": "Provider information and licenses",
+      "entry_steps": [
+        "Tap info on provider screen",
+        "Read native license destination"
+      ],
+      "states": [
+        "Places information",
+        "Navigation licenses"
+      ],
+      "capture_notes": "Back from licenses must not auto-restart route/guidance. No dedicated screenshot function found."
+    },
+    {
+      "id": "google.preview-fallback",
+      "group": "Google/navigation",
+      "title": "Unknown-position or map unavailable fallback",
+      "entry_steps": [
+        "Open independently sourced real listing without coordinate",
+        "Or observe authentic missing-key/load-failure state"
+      ],
+      "states": [
+        "unlocated",
+        "unavailable"
+      ],
+      "capture_notes": "Unknown real place offers branch lookup; demo/imported OSM action is blocked. Do not deliberately break production configuration."
+    },
+    {
+      "id": "sharing.host-extension",
+      "group": "Sharing/Dynamic Island",
+      "title": "Native iPhone share extension",
+      "entry_steps": [
+        "Safari → share a benign public page",
+        "Choose Kulture Edit extension",
+        "Review and Save to Kulture"
+      ],
+      "states": [
+        "editing source",
+        "saved",
+        "validation failure"
+      ],
+      "capture_notes": "Host share sheet is iOS UI; screenshot is from Safari/extension. No private social-account scraping."
+    },
+    {
+      "id": "sharing.review",
+      "group": "Sharing/Dynamic Island",
+      "title": "Review outing before publishing unlisted link",
+      "entry_steps": [
+        "Plans → source-backed leisure outing → Share",
+        "Review exact stops and excluded private data"
+      ],
+      "states": [
+        "review",
+        "signed out",
+        "validation error"
+      ],
+      "capture_notes": "Publishing is explicit. Link excludes notes, brief, chosen start, taste, location history and owner identity."
+    },
+    {
+      "id": "sharing.link-ready",
+      "group": "Sharing/Dynamic Island",
+      "title": "Created share link and system share sheet",
+      "entry_steps": [
+        "Review → explicit Create link"
+      ],
+      "states": [
+        "ready",
+        "copied",
+        "system share"
+      ],
+      "capture_notes": "An unlisted URL grants access; use intended public demo link or keep artifact private. Do not expose unrelated capabilities."
+    },
+    {
+      "id": "sharing.receive",
+      "group": "Sharing/Dynamic Island",
+      "title": "Open shared plan and save independent copy",
+      "entry_steps": [
+        "Plans → Open a shared plan or valid deep link",
+        "Load intended public demo share",
+        "Optionally save QA-local independent copy"
+      ],
+      "states": [
+        "paste URL",
+        "recipient preview",
+        "saved copy",
+        "withdrawn stop"
+      ],
+      "capture_notes": "Snapshot order/title immutable; current place facts can update or become unavailable."
+    },
+    {
+      "id": "sharing.manage",
+      "group": "Sharing/Dynamic Island",
+      "title": "Owned share links and revoke confirmation",
+      "entry_steps": [
+        "Plans → Shared links"
+      ],
+      "states": [
+        "active",
+        "expired",
+        "revoked",
+        "revoke confirmation"
+      ],
+      "capture_notes": "Revoke only link created by the QA flow. Existing links must be preserved."
+    },
+    {
+      "id": "sharing.unavailable",
+      "group": "Sharing/Dynamic Island",
+      "title": "Expired or revoked shared plan",
+      "entry_steps": [
+        "Open own QA-created link after intentional revoke"
+      ],
+      "states": [
+        "uniform unavailable",
+        "missing source stop"
+      ],
+      "capture_notes": "No fabricated provider replacement for a withdrawn stop."
+    },
+    {
+      "id": "island.navigation",
+      "group": "Sharing/Dynamic Island",
+      "title": "Navigation Dynamic Island / Lock Screen",
+      "entry_steps": [
+        "Enable Live Activities",
+        "Explicitly start actual SDK guidance/simulation",
+        "Home; capture system screen"
+      ],
+      "states": [
+        "compact Route",
+        "expanded Google Maps estimate",
+        "Lock Screen",
+        "stale/paused"
+      ],
+      "capture_notes": "Use XCUIScreen capture, not app.screenshot. Expanded Google route values include Google Maps attribution; simulation label must stay."
+    },
+    {
+      "id": "island.stay",
+      "group": "Sharing/Dynamic Island",
+      "title": "Stay countdown Dynamic Island / Lock Screen",
+      "entry_steps": [
+        "Begin QA-local outing → explicitly start stay timer",
+        "Home and capture system surface"
+      ],
+      "states": [
+        "compact countdown",
+        "expanded countdown",
+        "time reached"
+      ],
+      "capture_notes": "Countdown is user-selected stay duration, not venue availability."
+    },
+    {
+      "id": "island.outing",
+      "group": "Sharing/Dynamic Island",
+      "title": "Manual next-stop Live Activity",
+      "entry_steps": [
+        "Explicitly begin outing",
+        "Capture Island / Lock Screen"
+      ],
+      "states": [
+        "stop n of total",
+        "manual progress",
+        "paused"
+      ],
+      "capture_notes": "Source exists; no dedicated current Island snapshot function found for outing alone."
+    },
+    {
+      "id": "island.ask-voice",
+      "group": "Sharing/Dynamic Island",
+      "title": "Transient Ask and voice Live Activities",
+      "entry_steps": [
+        "Explicit Send or start actual microphone recording",
+        "Capture active system surface while app remains valid"
+      ],
+      "states": [
+        "Assembling your options",
+        "Microphone in use"
+      ],
+      "capture_notes": "Prompt/transcript hidden. These transient activities end on background; do not stage a false long-running background state."
+    },
+    {
+      "id": "state.large-type",
+      "group": "States",
+      "title": "Actual Dynamic Type accessibility layout",
+      "entry_steps": [
+        "Set actual simulator/device content size accessibility-medium",
+        "Open Explore and Ask with keyboard",
+        "Restore previous content size after capture"
+      ],
+      "states": [
+        "Explore",
+        "Ask first entry",
+        "keyboard"
+      ],
+      "capture_notes": "Legacy launch flag alone is not proof of Dynamic Type."
+    },
+    {
+      "id": "state.reduce-motion",
+      "group": "States",
+      "title": "Reduced motion / transparency settings",
+      "entry_steps": [
+        "Use actual accessibility Reduce Motion / Reduce Transparency setting",
+        "Capture main tab and pushed detail"
+      ],
+      "states": [
+        "reduced motion",
+        "opaque dock fallback"
+      ],
+      "capture_notes": "No dedicated acceptance flow found. Screenshot cannot prove animation smoothness; use a recording for motion."
+    },
+    {
+      "id": "state.network-errors",
+      "group": "States",
+      "title": "Authentic provider, contact and AI failure states",
+      "entry_steps": [
+        "Only capture naturally occurring failure or isolated authorized QA failure condition",
+        "Keep code/status text visible and sanitized"
+      ],
+      "states": [
+        "quota reached",
+        "provider unavailable",
+        "permission denied",
+        "stale contact",
+        "network failure"
+      ],
+      "capture_notes": "Do not simulate success. Do not alter production keys, account data or live backend solely to force errors."
+    },
+    {
+      "id": "state.empty-collections",
+      "group": "States",
+      "title": "Empty Saved, Plans, inbox and choices",
+      "entry_steps": [
+        "Use an already empty dedicated QA profile/account"
+      ],
+      "states": [
+        "empty Saved",
+        "empty Plans",
+        "empty link inbox",
+        "empty feedback"
+      ],
+      "capture_notes": "No destructive reset or personal collection deletion to obtain empty screenshots."
+    },
+    {
+      "id": "state.permissions",
+      "group": "States",
+      "title": "Native consent, location and microphone prompts",
+      "entry_steps": [
+        "Trigger only the explicitly requested feature in a fresh permission state"
+      ],
+      "states": [
+        "Google terms",
+        "When In Use location",
+        "microphone",
+        "optional turn alerts"
+      ],
+      "capture_notes": "System-controlled prompts vary by iOS and prior permission state; absence is not an app defect."
+    }
+  ]
+}
