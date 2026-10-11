@@ -4,6 +4,7 @@
 
 Open [index.html](index.html) in a browser. Search by feature, filter by section or current/archive status, then open an image. Use the arrow keys to move through a flow and Escape to return. Everything works offline. Full-resolution, unmodified PNGs are in `images/`.
 
+- [Deploy on Vercel](DEPLOY.md) — static hosting, no environment variables or build step
 - [Flow guide](FLOWS.md)
 - [Coverage and uncaptured states](COVERAGE.md)
 - [Machine-readable manifest](manifest.json)
